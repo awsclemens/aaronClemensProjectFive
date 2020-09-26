@@ -13,6 +13,10 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   /* thistle: #D7C0D0 */
   /* english vermillion: #D33F49 */
 
+/*<< font families >>*/
+  /* east sea dokoko: 400, 500, cursive */
+  /* roboto: 400, 500, sans-serif */
+
 /**********************/
 /*<< general styles >>*/
 /**********************/
@@ -54,36 +58,44 @@ ul {
 .App {
   font-family: 'East Sea Dokdo', cursive;
   background: #262730;
-  font-size: 3rem;
+  font-size: 4rem;
   line-height: 1;
   padding: 10px 0;
+  min-height: 100vh;
+}
+
+header,
+main,
+footer {
+  background: #77BA99;
+  color: #262730;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+main {
+  background: #EFF0D1;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  font-family: 'Roboto', cursive;
-  font-size: 4rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
 }
 
 a {
   color: #262730;
 }
 
-main {
-  background: #77BA99;
-  color: #262730;
-  padding: 10px;
-  border-radius: 5px;
-}
-
 /**************/
 /*<< header >>*/
 /**************/
 header {
-  background: #77BA99;
-  color: #262730;
-  padding: 10px;
   margin-bottom: 10px;
-  border-radius: 5px;
 }
 
 .flexContainer {
@@ -104,10 +116,7 @@ header a {
 /*<< footer >>*/
 /**************/
 footer {
-  padding: 10px;
-  background:  #77BA99;
   margin-top: 10px;
-  border-radius: 5px;
   text-align: center;
 }
 
@@ -125,7 +134,11 @@ footer {
   }
 
   .App {
-    font-size: calc(1.8rem + (100vw - 320px)*((30 - 18)/(940 - 320)))
+    font-size: calc(1.8rem + (100vw - 320px)*((40 - 18)/(940 - 320)));
+  }
+
+  h1 {
+    font-size: calc(4rem + (100vw - 320px)*((50 - 4)/(940 - 320)));
   }
 }
 
@@ -143,9 +156,11 @@ footer {
   }
 
   /*<< header >>*/
-  header {
+  header,
+  main {
     padding: 5px;
   }
+
 }
 
 
