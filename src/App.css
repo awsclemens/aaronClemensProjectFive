@@ -68,20 +68,28 @@ a {
   color: #262730;
 }
 
+main {
+  background: #77BA99;
+  color: #262730;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /**************/
 /*<< header >>*/
 /**************/
 header {
   background: #77BA99;
   color: #262730;
-  padding: 0 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .flexContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
 }
 
 header a {
@@ -95,6 +103,13 @@ header a {
 /**************/
 /*<< footer >>*/
 /**************/
+footer {
+  padding: 10px;
+  background:  #77BA99;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
 
 /******************/
 /*<< key frames >>*/

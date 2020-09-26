@@ -10,7 +10,7 @@ class Header extends Component {
                     <p>comics by: <a href="https://twitter.com/xkcd?lang=en" target="_blank" rel="noopener">Randall Patrick Munroe</a></p>
                 </header>
             </div>
-        )
+        );
     }
 }
 
