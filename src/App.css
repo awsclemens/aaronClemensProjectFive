@@ -15,10 +15,6 @@ html {
   font-size: 62.5%;
 }
 
-.App {
-  font-size: 1.6rem;
-}
-
 /* Stripping Styles */
 h1,
 h2, 
@@ -48,10 +44,29 @@ ul {
 /******************/
 /*<< typography >>*/
 /******************/
+.App {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+a {
+  color: black;
+}
 
 /**************/
 /*<< header >>*/
 /**************/
+header {
+  background: cyan;
+  padding: 0 10px;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
 
 /***************/
 /*<< section >>*/
@@ -68,5 +83,16 @@ ul {
 /*********************/
 /*<< media queries >>*/
 /*********************/
+
+@media(max-width: 480px) {
+  /*<< general >>*/
+  .wrapper {
+    width: 95%;
+  }
+
+  .App {
+    font-size: calc(1.4rem + (100vw - 320px)*((16 - 14)/(480 - 320)));
+  }
+}
 
 
