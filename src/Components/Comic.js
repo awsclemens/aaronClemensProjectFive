@@ -1,20 +1,6 @@
 // Comic.js
 import React from 'react';
-
-const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-]
+import months from '../modules/monthsList.js';
 
 // function component
 const Comic = ({comicNum, title, url, transcript, year, month, day}) => {
