@@ -76,6 +76,7 @@ footer {
 main {
   background: #EFF0D1;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 h1 {
@@ -83,9 +84,9 @@ h1 {
   font-size: 5rem;
 }
 
-h2 {
+/* h2 {
   font-size: 3.5rem;
-}
+} */
 
 a {
   color: #262730;
@@ -108,9 +109,19 @@ header a {
   font-weight: bold;
 }
 
-/***************/
-/*<< section >>*/
-/***************/
+/************/
+/*<< Main >>*/
+/************/
+h2,
+time,
+h3 {
+  margin: 5px;
+}
+
+img {
+  margin: 10px 0;
+}
+
 
 /**************/
 /*<< footer >>*/
