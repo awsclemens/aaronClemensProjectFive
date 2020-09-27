@@ -188,6 +188,10 @@ h3 {
   position: relative;
 }
 
+/* .imageContainer:hover .overlay {
+  display: block;
+} */
+
 .overlay {
   background: rgba(38, 39, 48, 0.96);
   color: #EFF0D1;
@@ -195,10 +199,10 @@ h3 {
   top:0;
   width: 100%;
   height: 100%;
-  opacity: 0;
   padding: 10px;
   text-shadow: none;
   font-size: 2rem;
+  display: none;
 }
 
 
