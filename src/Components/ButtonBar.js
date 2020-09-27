@@ -6,14 +6,14 @@ class ButtonBar extends Component {
 
 
     render(){
-        const { loadFirstComic } = this.props
+        const { randomComic, firstComic, latestComic, previousComic, nextComic } = this.props
         return(
             <div className="buttonBar">
-                <button>Random</button>
-                <button onClick={loadFirstComic}>First</button>
-                <button>Latest</button>
-                <button>Prev</button>
-                <button>Next</button>
+                <button onClick={randomComic}>Random</button>
+                <button onClick={firstComic}>First</button>
+                <button onClick={latestComic}>Latest</button>
+                <button onClick={previousComic}>Prev</button>
+                <button onClick={nextComic}>Next</button>
             </div>
         );
     }

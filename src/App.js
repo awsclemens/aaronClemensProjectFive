@@ -2,8 +2,7 @@
 
 // imports
 import React, { Component } from 'react';
-import getLatestComic from './modules/getLatestComic.js'
-import getFirstComic from './modules/getFirstComic.js'
+import axios from 'axios';
 import Header from './Components/Header.js';
 import ButtonBar from './Components/ButtonBar.js'
 import Comic from './Components/Comic.js'
@@ -15,30 +14,56 @@ class App extends Component {
     super();
     this.state = {
       comic: [],
+      latestNum: 0,
+      currentComicNum: 0,
     }
   }
 
-  componentDidMount(){
-    getLatestComic.then((response) => {
-      const latestComic = [];
-      latestComic.push(response.data);
+  componentDidMount= () => {
+    this.loadComic('');
+  }
+  
+  loadComic = (comicNum) => {
+    axios({
+      method: 'GET',
+      url: 'http://proxy.hackeryou.com',
+      dataResponse: 'json',
+      params: {
+          reqUrl: `http://xkcd.com/${comicNum}info.0.json`,
+          xmlToJSON: false,
+          useCache: false
+      }
+    }).then((response) => {
+      const currentComic = [];
+      currentComic.push(response.data);
       // update state
       this.setState({
-        comic: latestComic,
+        comic: currentComic,
+        currentComicNum: currentComic[0].num,
+        // latestNum: currentComic[0].num,
       });
-      console.log('initial comic', this.state.comic);
+      if (this.state.latestNum === 0){
+        this.setState({
+          latestNum: currentComic[0].num,
+        })
+      };
+      console.log('current comic', this.state.comic);
+      console.log('current comic #:',this.state.currentComicNum);
+      console.log('latest num: ',this.state.latestNum);
     });
   }
 
-  loadFirstComic = () => {
-    getFirstComic.then((response) => {
-      const firstComic = [];
-      firstComic.push(response.data);
-      // update state
-      this.setState({
-        comic: firstComic,
-      })
-    });
+  randomComic = () => {
+    const comicNum = Math.floor(Math.random() * this.state.latestNum) + 1;
+    return (`${comicNum}/`);
+  }
+
+  previousComic = () => {
+    return(this.state.currentComicNum > 1 ? `${this.state.currentComicNum - 1}/` : '1/');
+  }
+
+  nextComic = () => {
+    return(this.state.currentComicNum < this.state.latestNum ? `${this.state.currentComicNum + 1}/` : `${this.state.latestNum}/`);
   }
 
   render(){
@@ -47,7 +72,13 @@ class App extends Component {
         <Header />
         <div className="wrapper">
           <main>
-            <ButtonBar loadFirstComic={this.loadFirstComic}/>
+            <ButtonBar
+            randomComic={() => this.loadComic(this.randomComic())}
+            firstComic={() => this.loadComic('1/')}
+            latestComic={() => this.loadComic('')}
+            previousComic={() => this.loadComic(this.previousComic())}
+            nextComic={() => this.loadComic(this.nextComic())}
+            />
             {this.state.comic.map((comic) => {
               return (
                 <Comic 
