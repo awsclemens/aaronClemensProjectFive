@@ -91,6 +91,7 @@ class App extends Component {
                 year={comic.year}
                 month={comic.month}
                 day={comic.day}
+                bonusText={comic.alt}
                 />
               )
             })}
