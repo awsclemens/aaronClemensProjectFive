@@ -10,7 +10,8 @@ const Comic = ({latestNum, comicNum, title, url, transcript, year, month, day}) 
             <p><time dateTime={`${year}-${month}-${day}`}>{months[parseInt(month) - 1]} {day}, {year}</time></p>
             <h3>{title}</h3>
             <div className="imageContainer">
-                <img src={url} alt={transcript}></img>
+                {transcript !== "" ? <img src={url} alt={transcript}></img> : <img src={url} alt="A Comic by Randall Patrick Munroe. Transcript unavailable at this time"></img> }
+                
             </div>
         </div>
         
