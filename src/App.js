@@ -83,6 +83,7 @@ class App extends Component {
               return (
                 <Comic 
                 key={comic.num}
+                latestNum={this.state.latestNum}
                 comicNum={comic.num}
                 title={comic.title}
                 url={comic.img}

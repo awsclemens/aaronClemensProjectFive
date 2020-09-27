@@ -81,6 +81,7 @@ footer {
   color: #262730;
   padding: 10px;
   border-radius: 5px;
+  border: 1px solid #D7C0D0;
 }
 
 h1 {
@@ -91,9 +92,6 @@ h1 {
 main {
   background: #EFF0D1;
   font-family: 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h2 {
@@ -147,6 +145,12 @@ header a {
 /************/
 /*<< Main >>*/
 /************/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .buttonBar {
   max-width: 504.4px;
 }
@@ -188,6 +192,10 @@ img {
 footer {
   margin-top: 10px;
   text-align: center;
+}
+
+footer a:first-of-type {
+  font-weight: bold;
 }
 
 /******************/
@@ -233,6 +241,10 @@ footer {
 
 @media(max-width: 768px) {
   /*<< general >>*/
+  .App {
+    text-shadow: 1px 1px #D7C0D0;
+  }
+
   .wrapper {
     width: 90%;
   }
@@ -247,7 +259,7 @@ footer {
   /*<< header >>*/
   header,
   main {
-    padding: 5px;
+    padding: 10px 5px;
   }
 
 }

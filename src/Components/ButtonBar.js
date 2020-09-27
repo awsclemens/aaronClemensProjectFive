@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 
 class ButtonBar extends Component {
 
-
-
     render(){
-        const { randomComic, firstComic, latestComic, previousComic, nextComic } = this.props
+        const { randomComic, firstComic, latestComic, previousComic, nextComic } = this.props;
+
         return(
             <div className="buttonBar">
                 <button onClick={randomComic}>Random</button>
