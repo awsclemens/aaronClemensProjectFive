@@ -94,7 +94,13 @@ class App extends Component {
                 />
               )
             })}
-            <ButtonBar />
+            <ButtonBar
+            randomComic={() => this.loadComic(this.randomComic())}
+            firstComic={() => this.loadComic('1/')}
+            latestComic={() => this.loadComic('')}
+            previousComic={() => this.loadComic(this.previousComic())}
+            nextComic={() => this.loadComic(this.nextComic())}
+            />
           </main>
         </div>
         <Footer />
