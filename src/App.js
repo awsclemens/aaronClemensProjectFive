@@ -2,8 +2,10 @@
 
 // imports
 import React, { Component } from 'react';
-import axios from 'axios';
+import getLatestComic from './modules/getLatestComic.js'
+import getFirstComic from './modules/getFirstComic.js'
 import Header from './Components/Header.js';
+import ButtonBar from './Components/ButtonBar.js'
 import Comic from './Components/Comic.js'
 import Footer from './Components/Footer.js'
 import './App.css';
@@ -17,25 +19,25 @@ class App extends Component {
   }
 
   componentDidMount(){
-    // make api call, using juno proxy, to get latest comic
-    axios({
-      method: 'GET',
-      url: 'http://proxy.hackeryou.com',
-      dataResponse: 'json',
-      params: {
-        reqUrl: 'http://xkcd.com/info.0.json',
-        xmlToJSON: false,
-        useCache: false
-      }
-    }).then((response) => {
+    getLatestComic.then((response) => {
       const latestComic = [];
       latestComic.push(response.data);
-
       // update state
       this.setState({
         comic: latestComic,
       });
-      console.log(this.state.comic);
+      console.log('initial comic', this.state.comic);
+    });
+  }
+
+  loadFirstComic = () => {
+    getFirstComic.then((response) => {
+      const firstComic = [];
+      firstComic.push(response.data);
+      // update state
+      this.setState({
+        comic: firstComic,
+      })
     });
   }
 
@@ -45,6 +47,7 @@ class App extends Component {
         <Header />
         <div className="wrapper">
           <main>
+            <ButtonBar loadFirstComic={this.loadFirstComic}/>
             {this.state.comic.map((comic) => {
               return (
                 <Comic 
@@ -59,6 +62,7 @@ class App extends Component {
                 />
               )
             })}
+            <ButtonBar />
           </main>
         </div>
         <Footer />

@@ -5,7 +5,7 @@ class Footer extends Component {
         return(
             <div className="wrapper">
                 <footer>
-                <p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener">Aaron W.S. Clemens</a> || <a href="https://junocollege.com/" target="_blank" rel="noopener">Juno College</a></p>
+                <p>© 2020 <a href="https://github.com/awsclemens" target="_blank" rel="noopener noreferrer">Aaron W.S. Clemens</a> || <a href="https://junocollege.com/" target="_blank" rel="noopener noreferrer">Juno College</a></p>
                 </footer>
                 
             </div>
