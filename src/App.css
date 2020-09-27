@@ -119,10 +119,11 @@ button {
   color: #EFF0D1;
 }
 
-button:hover,
-button:focus {
+button:focus,
+button:hover {
   background: #D7C0D0;
   color:  #262730;
+  cursor: pointer;
 }
 
 /**************/
@@ -153,6 +154,7 @@ main {
 
 .buttonBar {
   max-width: 504.4px;
+  display: flex;
 }
 
 button {
