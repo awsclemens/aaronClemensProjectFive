@@ -24,6 +24,10 @@ class App extends Component {
     this.loadComic('');
     // create firebase reference
     const dbRef = firebase.database().ref();
+    // listen to the value change in realtime database
+    dbRef.on('value', (response) => {
+      console.log('database:', response.val());
+    })
   }
   
   loadComic = (comicNum) => {
