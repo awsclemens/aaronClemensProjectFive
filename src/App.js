@@ -2,6 +2,7 @@
 
 // imports
 import React, { Component } from 'react';
+import firebase from './modules/firebase.js';
 import axios from 'axios';
 import Header from './Components/Header.js';
 import ButtonBar from './Components/ButtonBar.js'
@@ -21,6 +22,8 @@ class App extends Component {
 
   componentDidMount= () => {
     this.loadComic('');
+    // create firebase reference
+    const dbRef = firebase.database().ref();
   }
   
   loadComic = (comicNum) => {
