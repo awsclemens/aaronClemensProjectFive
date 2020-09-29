@@ -17,18 +17,38 @@ class App extends Component {
       comic: [],
       latestNum: 0,
       currentComicNum: 0,
+      recentComics: [],
     }
   }
 
-  componentDidMount= () => {
+  componentDidMount = () => {
     this.loadComic('');
     // create firebase reference
     const dbRef = firebase.database().ref();
     // listen to the value change in realtime database
     dbRef.on('value', (response) => {
       console.log('database:', response.val());
-    })
+
+      const newState = [];
+      const data = response.val();
+
+      for(const key in data) {
+        console.log(key, data[key]);
+
+        newState.push({
+          key: key,
+          recentComic: data[key]
+        });
+      }
+
+      // update state with recent Comics
+      this.setState({
+        recentComics: newState,
+      });
+    });
   }
+
+  
   
   loadComic = (comicNum) => {
     axios({
@@ -47,13 +67,22 @@ class App extends Component {
       this.setState({
         comic: currentComic,
         currentComicNum: currentComic[0].num,
-        // latestNum: currentComic[0].num,
       });
       if (this.state.latestNum === 0){
         this.setState({
           latestNum: currentComic[0].num,
         })
-      };
+      } else {
+        // only adds comic after user loads new comic, not the latest comic displayed on page load
+        // if there are already 5 recent comics in state then remove 1st comic from database, before adding the current comic, always keeping 5 recent comic records
+        if(this.state.recentComics.length === 5) {
+          const comicRemove = this.state.recentComics[0].key;
+          const dbRef = firebase.database().ref();
+          dbRef.child(comicRemove).remove();
+        }
+        const dbRef = firebase.database().ref();
+        dbRef.push(this.state.comic[0]);
+      }
       console.log('current comic', this.state.comic);
       console.log('current comic #:',this.state.currentComicNum);
       console.log('latest num: ',this.state.latestNum);
