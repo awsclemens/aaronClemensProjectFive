@@ -90,6 +90,17 @@ class App extends Component {
     });
   }
 
+  // comicNumberSearch = (e, userInput) => {
+  //   e.preventDefault();
+  //   return (`${userInput}/`);
+  // }
+
+  numberSearch = (e, userInput) => {
+    e.preventDefault();
+    console.log('submitted');
+    this.loadComic(`${userInput}/`);
+  }
+
   randomComic = () => {
     const comicNum = Math.floor(Math.random() * this.state.latestNum) + 1;
     return (`${comicNum}/`);
@@ -111,6 +122,7 @@ class App extends Component {
           <main>
             <SearchBar 
             maxNum={this.state.latestNum}
+            numberSearch={this.numberSearch}
             />
             <ButtonBar
             randomComic={() => this.loadComic(this.randomComic())}
