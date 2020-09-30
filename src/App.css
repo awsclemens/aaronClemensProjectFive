@@ -350,7 +350,7 @@ footer a:first-of-type {
     width: 40%;
   }
 
-  ol {
+  ol button {
     font-size: calc(2rem + (100vw - 769px)*((24 - 20)/(940 - 768))); 
   }
 
@@ -416,7 +416,7 @@ footer a:first-of-type {
     font-size: calc(3.8rem + (100vw - 481px)*((46 - 38)/(768 - 480)));
   }
 
-  ol {
+  ol button {
     font-size: calc(1.8rem + (100vw - 481px)*((20 - 18)/(768 - 480))); 
   }
 
@@ -444,7 +444,7 @@ footer a:first-of-type {
     /* margin-top: 10px; */
   }
 
-  ol {
+  ol button {
     margin-top: 10px;
   }
 
