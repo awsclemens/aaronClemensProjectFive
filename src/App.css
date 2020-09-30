@@ -123,10 +123,11 @@ ol li {
 ol li:hover,
 ol li:focus {
   box-shadow: 2px 2px #262730;
+  transform: scale(1.02);
   cursor: pointer;
 }
 
-ol li:first-child {
+ol li:last-child {
   background: #77BA99;
 }
 

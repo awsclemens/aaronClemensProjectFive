@@ -18,9 +18,9 @@ class RecentlyViewed extends Component {
                     <button className={'closeList'} aria-label={'Close recently viewed list'} onClick={this.handleClick}>X</button>
                     <h2>Recently Viewed</h2>
                     <ol className={'recentList'}>
-                        {this.props.recentList.map((comic) => {
+                        {this.props.recentList.map((comic, key) => {
                             return (
-                            <li>{`${comic.recentComic.title} - `}<span>{`comic#${comic.recentComic.num}`}</span></li>
+                            <li key={key}>{`${comic.recentComic.title} - `}<span>{`comic#${comic.recentComic.num}`}</span></li>
                             );
                         })}
                     </ol>
