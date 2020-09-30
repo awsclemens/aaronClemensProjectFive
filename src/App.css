@@ -430,6 +430,7 @@ footer a:first-of-type {
 
   .recentlyViewed h2 {
     font-size: 3.8rem;
+    margin-top: 10px;
   }
 
   ol li span {
