@@ -152,6 +152,40 @@ main {
   align-items: center;
 }
 
+.searchBar {
+  width: 100%;
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  margin-left: 10px;
+  max-width: 70px;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  border: none;
+  text-align: center;
+  background: #D7C0D0;
+}
+
+input[type="number"]:invalid {
+  box-shadow: none;
+}
+
+.searchBar button {
+  background: none;
+  color: #262730;
+  margin: 0 0 0 10px;
+}
+
+.searchBar button:hover,
+.searchBar button:focus {
+  background: #D7C0D0;
+}
+
 .buttonBar {
   max-width: 504.4px;
   display: flex;
@@ -240,9 +274,15 @@ footer a:first-of-type {
     font-size: calc(4rem + (100vw - 320px)*((50 - 40)/(940 - 320)));
   }
 
-  button {
+  .searchBar button,
+  .searchBar {
+    font-size: calc(1.4rem + (100vw - 320px)*((24 - 16)/(940 - 320)));
+    padding: calc(3px + (100vw - 320px)*((5 - 3)/(940 - 320))) calc(6px + (100vw - 320px)*((10 - 6)/(940 - 320)));
+  }
+
+  .buttonBar button {
     font-size: calc(1.6rem + (100vw - 320px)*((24 - 16)/(940 - 320)));
-    padding: calc(3px + (100vw - 320px)*((5 - 3)/(940 - 320))) calc(6px + (100vw - 320px)*((10 - 6)/(940 - 320)));;
+    padding: calc(3px + (100vw - 320px)*((5 - 3)/(940 - 320))) calc(6px + (100vw - 320px)*((10 - 6)/(940 - 320)));
     margin: 0 calc(2.5px + (100vw - 320px)*((10 - 2.5)/(940 - 320)));;
   }
 
@@ -282,19 +322,24 @@ footer a:first-of-type {
     width: 95%;
   }
 
-  /*<< header >>*/
-  header {
+  header,
+  main,
+  footer {
     padding: 5px;
   }
 
   /*<< main >>*/
-  h2 {
-    margin-top: 0;
+  input[type="number"] {
+    max-width: 45px;
+    margin-left: 5px;
   }
 
-  /*<< footer >>*/
-  footer {
-    padding: 5px;
+  .searchBar button {
+    margin-left: 5px;
+  }
+
+  h2 {
+    margin-top: 0;
   }
 
 }

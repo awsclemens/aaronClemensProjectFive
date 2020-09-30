@@ -5,9 +5,10 @@ import React, { Component } from 'react';
 import firebase from './modules/firebase.js';
 import axios from 'axios';
 import Header from './Components/Header.js';
-import ButtonBar from './Components/ButtonBar.js'
-import Comic from './Components/Comic.js'
-import Footer from './Components/Footer.js'
+import SearchBar from './Components/SearchBar';
+import ButtonBar from './Components/ButtonBar.js';
+import Comic from './Components/Comic.js';
+import Footer from './Components/Footer.js';
 import './App.css';
 
 class App extends Component {
@@ -108,6 +109,9 @@ class App extends Component {
         <Header />
         <div className="wrapper">
           <main>
+            <SearchBar 
+            maxNum={this.state.latestNum}
+            />
             <ButtonBar
             randomComic={() => this.loadComic(this.randomComic())}
             firstComic={() => this.loadComic('1/')}
