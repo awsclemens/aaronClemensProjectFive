@@ -36,7 +36,7 @@ h2,
 h3,
 p,
 a,
-ul,
+ol,
 button {
   padding: 0;
   margin: 0;
@@ -50,7 +50,7 @@ button {
   border: none;
 }
 
-ul {
+ol {
   list-style: none;
 }
 
@@ -72,6 +72,77 @@ ul {
   padding: 10px 0;
   min-height: 100vh;
   text-shadow: 2px 2px #D7C0D0;
+  position: relative;
+}
+
+.recentlyViewed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  z-index: 10;
+  background: #D7C0D0;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.recentlyViewed button {
+  height: 40px;
+  width: 40px;
+  box-shadow: 2px 2px  #EFF0D1;
+}
+
+.recentlyViewed button:hover,
+.recentlyViewed button:focus {
+  background: #77BA99;
+  box-shadow: 2px 2px #262730;
+}
+
+.recentlyViewed h2 {
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 1px 1px #EFF0D1;
+  font-size: 6rem;
+  margin-top: 30px;
+}
+
+ol {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.4rem;
+  margin-top: 20px;
+}
+
+ol li {
+  padding: 5px;
+  margin: 20px 0;
+  background:  #EFF0D1;
+  border-radius: 5px;
+}
+
+ol li:hover,
+ol li:focus {
+  box-shadow: 2px 2px #262730;
+  cursor: pointer;
+}
+
+ol li:first-child {
+  background: #77BA99;
+}
+
+ol li span {
+  font-size: 1.6rem;
+}
+
+.screenDark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 100%;
+  z-index: 10;
+  background:  rgba(38, 39, 48, 0.9);
+  transition: all 0.3s;
 }
 
 header,

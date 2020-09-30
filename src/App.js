@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import firebase from './modules/firebase.js';
 import axios from 'axios';
 import Header from './Components/Header.js';
+import RecentlyViewed from './Components/RecentlyViewed.js'
 import SearchBar from './Components/SearchBar';
 import ButtonBar from './Components/ButtonBar.js';
 import Comic from './Components/Comic.js';
@@ -49,8 +50,6 @@ class App extends Component {
     });
   }
 
-  
-  
   loadComic = (comicNum) => {
     axios({
       method: 'GET',
@@ -113,6 +112,9 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        <RecentlyViewed 
+        recentList={this.state.recentComics}
+        />
         <Header />
         <div className="wrapper">
           <main>
