@@ -112,6 +112,10 @@ ol {
   align-items: center;
 }
 
+.closeList i {
+  color: #EFF0D1;
+}
+
 .closeList:hover,
 .closeList:focus {
   background: #77BA99;
