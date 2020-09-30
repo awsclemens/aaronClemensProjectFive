@@ -75,8 +75,8 @@ class App extends Component {
         })
       } else {
         // only adds comic after user loads new comic, not the latest comic displayed on page load
-        // if there are already 5 recent comics in state then remove 1st comic from database, before adding the current comic, always keeping 5 recent comic records
-        if(this.state.recentComics.length === 5) {
+        // if there are already 10 recent comics in state then remove 1st comic from database, before adding the current comic, always keeping 10 recent comic records
+        if(this.state.recentComics.length === 10) {
           const comicRemove = this.state.recentComics[0].key;
           const dbRef = firebase.database().ref();
           dbRef.child(comicRemove).remove();
