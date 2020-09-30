@@ -147,14 +147,12 @@ ol button {
 
 ol button:hover,
 ol button:focus {
+  background: #77BA99;
   box-shadow: 2px 2px #262730;
   transform: scale(1.02);
   cursor: pointer;
 }
 
-ol li:last-child button{
-  background: #77BA99;
-}
 
 ol li span {
   font-size: 1.6rem;
