@@ -2,7 +2,9 @@
 
 import React, { Component } from 'react';
 
-class RecentlyViewed extends Component {
+
+class RecentlyViewed extends Component { 
+
     handleClick = () => {
         const recentList = document.getElementsByClassName('recentlyViewed');
         const screenDark = document.getElementsByClassName('screenDark');
@@ -19,13 +21,19 @@ class RecentlyViewed extends Component {
     }
 
     render(){
+        const newArray = [...this.props.recentList];
+        const recentArray = [];
+        for (let i = newArray.length - 1; i >= 0; i--){
+            recentArray.push(newArray[i]);
+        }
+
         return(
             <React.Fragment>
                 <aside className={'recentlyViewed'}>
                     <button className={'closeList listFocus'} tabIndex={-1} aria-label={'Close recently viewed list'} onClick={this.handleClick}><i className="fas fa-times" aria-hidden="true"></i></button>
                     <h2>Recently Viewed</h2>
                     <ol className={'recentList'}>
-                        {this.props.recentList.map((comic, key) => {
+                        {recentArray.map((comic, key) => {
                             return (
                             <li key={key}><button className={'listFocus'} tabIndex={-1}>{`${comic.recentComic.title} - `}<span>{`comic#${comic.recentComic.num}`}</span></button></li>
                             );
