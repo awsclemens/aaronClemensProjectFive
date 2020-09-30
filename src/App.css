@@ -99,6 +99,9 @@ ol {
   background: #D7C0D0;
   padding: 10px;
   transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .recentlyViewed button {
@@ -118,18 +121,22 @@ ol {
   text-decoration: underline;
   text-shadow: 1px 1px #EFF0D1;
   font-size: 4.6rem;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 ol {
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   font-size: 2.4rem;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 ol li {
   padding: 5px;
-  margin: 20px 0;
+  /* margin: 20px 0; */
   background:  #EFF0D1;
   border-radius: 5px;
 }
@@ -430,6 +437,10 @@ footer a:first-of-type {
 
   .recentlyViewed h2 {
     font-size: 3.8rem;
+    /* margin-top: 10px; */
+  }
+
+  ol {
     margin-top: 10px;
   }
 
