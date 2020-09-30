@@ -73,13 +73,27 @@ ol {
   min-height: 100vh;
   text-shadow: 2px 2px #D7C0D0;
   position: relative;
+  overflow-x: hidden;
+}
+
+.screenDark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-height: 100%;
+  height: 100%;
+  z-index: 10;
+  background:  rgba(38, 39, 48, 0.9);
+  transition: all 0.3s;
 }
 
 .recentlyViewed {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
-  width: 25%;
+  width: 30%;
+  max-height: 100%;
   height: 100%;
   z-index: 10;
   background: #D7C0D0;
@@ -103,7 +117,7 @@ ol {
   text-align: center;
   text-decoration: underline;
   text-shadow: 1px 1px #EFF0D1;
-  font-size: 6rem;
+  font-size: 4.6rem;
   margin-top: 30px;
 }
 
@@ -135,17 +149,6 @@ ol li span {
   font-size: 1.6rem;
 }
 
-.screenDark {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: 100%;
-  z-index: 10;
-  background:  rgba(38, 39, 48, 0.9);
-  transition: all 0.3s;
-}
-
 header,
 main,
 footer {
@@ -173,7 +176,6 @@ h2 {
 h3 {
   font-family: 'East Sea Dokdo', cursive;
   font-size: 7.5rem;
-  /* line-height: 0.6; */
 }
 
 a {
@@ -295,10 +297,6 @@ h3 {
   position: relative;
 }
 
-/* .imageContainer:hover .overlay {
-  display: block;
-} */
-
 .overlay {
   background: rgba(38, 39, 48, 0.96);
   color: #EFF0D1;
@@ -311,7 +309,6 @@ h3 {
   font-size: 2rem;
   display: none;
 }
-
 
 /**************/
 /*<< footer >>*/
@@ -334,6 +331,22 @@ footer a:first-of-type {
 /*********************/
 @media(max-width: 940px) {
   /*<< general >>*/
+  .screenDark {
+    width: 60%;
+  }
+
+  .recentlyViewed {
+    width: 40%;
+  }
+
+  ol {
+    font-size: calc(2rem + (100vw - 769px)*((24 - 20)/(940 - 768))); 
+  }
+
+  ol li span {
+    font-size: calc(1.4rem + (100vw - 769px)*((16 - 14)/(940 - 768))); 
+  }
+
   .wrapper {
     width: 85%;
   }
@@ -383,6 +396,23 @@ footer a:first-of-type {
     text-shadow: 1px 1px #D7C0D0;
   }
 
+  .screenDark,
+  .recentlyViewed {
+    width: 50%;
+  }
+
+  .recentlyViewed h2 {
+    font-size: calc(3.8rem + (100vw - 481px)*((46 - 38)/(768 - 480)));
+  }
+
+  ol {
+    font-size: calc(1.8rem + (100vw - 481px)*((20 - 18)/(768 - 480))); 
+  }
+
+  ol li span {
+    font-size: calc(1.2rem + (100vw - 481px)*((14 - 12)/(768 - 480))); 
+  }
+
   .wrapper {
     width: 90%;
   }
@@ -390,6 +420,22 @@ footer a:first-of-type {
 
 @media(max-width: 480px) {
   /*<< general >>*/
+  .screenDark {
+    width: 25%;
+  }
+
+  .recentlyViewed {
+    width: 75%;
+  }
+
+  .recentlyViewed h2 {
+    font-size: 3.8rem;
+  }
+
+  ol li span {
+    font-size: 1.2rem;
+  }
+
   .wrapper {
     width: 95%;
   }

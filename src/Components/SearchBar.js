@@ -19,8 +19,8 @@ class SearchBar extends Component {
     openList = () => {
         const recentList = document.getElementsByClassName('recentlyViewed');
         const screenDark = document.getElementsByClassName('screenDark');
-        recentList[0].style.right = '0';
-        screenDark[0].style.left = '0';
+        recentList[0].style.right = 0;
+        screenDark[0].style.left = 0;
         }
 
     render() {
