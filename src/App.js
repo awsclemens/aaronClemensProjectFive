@@ -99,6 +99,7 @@ class App extends Component {
     e.preventDefault();
     console.log('submitted');
     this.loadComic(`${userInput}/`);
+    document.getElementById('comicNumSearch').reset();
   }
 
   randomComic = () => {

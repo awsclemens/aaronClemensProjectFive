@@ -338,8 +338,16 @@ footer a:first-of-type {
     margin-left: 5px;
   }
 
+  .displayComic {
+    margin: 10px 0;
+  }
+
   h2 {
     margin-top: 0;
+  }
+
+  h3 {
+    margin-bottom: 10px;
   }
 
 }
