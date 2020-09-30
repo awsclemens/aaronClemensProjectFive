@@ -12,12 +12,14 @@ class Footer extends Component {
                     <p>
                         © 2020 
                         <a 
+                        className={'mainFocus'}
                         onMouseLeave={this.handleHoverOff}
                         href="https://github.com/awsclemens" 
                         target="_blank" 
                         rel="noopener noreferrer"> Aaron W.S. Clemens 
                         </a> || 
                         <a 
+                        className={'mainFocus'}
                         onMouseLeave={this.handleHoverOff}
                         href="https://junocollege.com/" 
                         target="_blank" 

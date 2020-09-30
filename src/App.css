@@ -102,15 +102,18 @@ ol {
   flex-direction: column;
 }
 
-.recentlyViewed button {
+.closeList {
   height: 40px;
   width: 40px;
   box-shadow: 2px 2px  #EFF0D1;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.recentlyViewed button:hover,
-.recentlyViewed button:focus {
+.closeList:hover,
+.closeList:focus {
   background: #77BA99;
   box-shadow: 2px 2px #262730;
 }
@@ -133,21 +136,23 @@ ol {
   justify-content: space-evenly;
 }
 
-ol li {
+ol button {
   padding: 5px;
   background:  #EFF0D1;
+  color:  #262730;
   border-radius: 5px;
   margin: 5px 0;
+  width: 100%;
 }
 
-ol li:hover,
-ol li:focus {
+ol button:hover,
+ol button:focus {
   box-shadow: 2px 2px #262730;
   transform: scale(1.02);
   cursor: pointer;
 }
 
-ol li:last-child {
+ol li:last-child button{
   background: #77BA99;
 }
 
