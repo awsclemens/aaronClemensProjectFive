@@ -20,6 +20,11 @@ class RecentlyViewed extends Component {
         }
     }
 
+    selectComic = (comicNum) => {
+        this.props.comicSelect(`${comicNum}/`);
+        this.handleClick();
+    }
+
     render(){
         const newArray = [...this.props.recentList];
         const recentArray = [];
@@ -35,7 +40,7 @@ class RecentlyViewed extends Component {
                     <ol className={'recentList'}>
                         {recentArray.map((comic, key) => {
                             return (
-                            <li key={key}><button className={'listFocus'} tabIndex={-1}>{`${comic.recentComic.title} - `}<span>{`comic#${comic.recentComic.num}`}</span></button></li>
+                            <li key={key}><button className={'listFocus'} onClick={() => {this.selectComic(comic.recentComic.num)}} tabIndex={-1}>{`${comic.recentComic.title} - `}<span>{`comic#${comic.recentComic.num}`}</span></button></li>
                             );
                         })}
                     </ol>

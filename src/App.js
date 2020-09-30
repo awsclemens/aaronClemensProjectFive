@@ -109,13 +109,12 @@ class App extends Component {
     return(this.state.currentComicNum < this.state.latestNum ? this.loadComic(`${this.state.currentComicNum + 1}/`) : this.loadComic(`${this.state.latestNum}/`));
   }
 
-  
-
   render(){
     return (
       <div className="App">
         <RecentlyViewed 
         recentList={this.state.recentComics}
+        comicSelect={this.loadComic}
         />
         <Header />
         <div className="wrapper">
