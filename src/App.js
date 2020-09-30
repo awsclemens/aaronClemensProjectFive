@@ -90,11 +90,6 @@ class App extends Component {
     });
   }
 
-  // comicNumberSearch = (e, userInput) => {
-  //   e.preventDefault();
-  //   return (`${userInput}/`);
-  // }
-
   numberSearch = (e, userInput) => {
     e.preventDefault();
     console.log('submitted');
@@ -104,15 +99,15 @@ class App extends Component {
 
   randomComic = () => {
     const comicNum = Math.floor(Math.random() * this.state.latestNum) + 1;
-    return (`${comicNum}/`);
+    this.loadComic(`${comicNum}/`);
   }
 
   previousComic = () => {
-    return(this.state.currentComicNum > 1 ? `${this.state.currentComicNum - 1}/` : '1/');
+    return(this.state.currentComicNum > 1 ? this.loadComic(`${this.state.currentComicNum - 1}/`) : this.loadComic('1/'));
   }
 
   nextComic = () => {
-    return(this.state.currentComicNum < this.state.latestNum ? `${this.state.currentComicNum + 1}/` : `${this.state.latestNum}/`);
+    return(this.state.currentComicNum < this.state.latestNum ? this.loadComic(`${this.state.currentComicNum + 1}/`) : this.loadComic(`${this.state.latestNum}/`));
   }
 
   render(){
@@ -126,11 +121,11 @@ class App extends Component {
             numberSearch={this.numberSearch}
             />
             <ButtonBar
-            randomComic={() => this.loadComic(this.randomComic())}
+            randomComic={this.randomComic}
             firstComic={() => this.loadComic('1/')}
             latestComic={() => this.loadComic('')}
-            previousComic={() => this.loadComic(this.previousComic())}
-            nextComic={() => this.loadComic(this.nextComic())}
+            previousComic={this.previousComic}
+            nextComic={this.nextComic}
             />
             {this.state.comic.map((comic) => {
               return (
@@ -149,11 +144,11 @@ class App extends Component {
               )
             })}
             <ButtonBar
-            randomComic={() => this.loadComic(this.randomComic())}
+            randomComic={this.randomComic}
             firstComic={() => this.loadComic('1/')}
             latestComic={() => this.loadComic('')}
-            previousComic={() => this.loadComic(this.previousComic())}
-            nextComic={() => this.loadComic(this.nextComic())}
+            previousComic={this.previousComic}
+            nextComic={this.nextComic}
             />
           </main>
         </div>
