@@ -1,6 +1,6 @@
 // SearchBar.js
-
 import React, { Component } from 'react';
+import hideShow from '../modules/hideShow.js'
 
 class SearchBar extends Component {
     constructor(){
@@ -19,19 +19,18 @@ class SearchBar extends Component {
 
     // allows user to click on a "Recently Viewed" button and then remove main page tab indexing and add tab indexing to list focus, AND slide out the screen dark and recentlyViewed list on top of the main page.
     openList = () => {
-        const recentList = document.getElementsByClassName('recentlyViewed');
-        const screenDark = document.getElementsByClassName('screenDark');
+        // opens the recently view comics list
+        hideShow();
+        // remove tab indexing from main focus
         const mainFocus = document.getElementsByClassName('mainFocus');
         const listFocus = document.getElementsByClassName('listFocus');
-        recentList[0].style.right = 0;
-        screenDark[0].style.left = 0;
         for ( let i = 0; i < mainFocus.length; i++) {
             mainFocus[i].setAttribute('tabindex', '-1');
         }
+        // add tab indexing to list focus
         for ( let i = 0; i < listFocus.length; i++) {
             listFocus[i].setAttribute('tabindex', '1');
         }
-
     }
 
     render() {

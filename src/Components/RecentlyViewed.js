@@ -1,21 +1,21 @@
 // RecentlyViewed.js
-
 import React, { Component } from 'react';
+import hideShow from '../modules/hideShow.js'
 
 
 class RecentlyViewed extends Component { 
 
     // hide recently viewed list and screen dark on button click, remove its tab indexing and add back tab indexing to main focus
     handleClick = () => {
-        const recentList = document.getElementsByClassName('recentlyViewed');
-        const screenDark = document.getElementsByClassName('screenDark');
+        // closes the recently viewed comics list
+        hideShow();
+        // return tab indexing to main focus
         const mainFocus = document.getElementsByClassName('mainFocus');
         const listFocus = document.getElementsByClassName('listFocus');
-        recentList[0].style.right = '-100%';
-        screenDark[0].style.left = '-100%';
         for ( let i = 0; i < mainFocus.length; i++) {
             mainFocus[i].setAttribute('tabindex', '1');
         }
+        // remove tab indexing from list focus
         for ( let i = 0; i < listFocus.length; i++) {
             listFocus[i].setAttribute('tabindex', '-1');
         }
@@ -37,7 +37,7 @@ class RecentlyViewed extends Component {
 
         return(
             <React.Fragment>
-                <aside className={'recentlyViewed'}>
+                <aside className={'recentlyViewed recentlyViewedHidden'}>
                     <button className={'closeList listFocus'} tabIndex={-1} aria-label={'Close recently viewed list'} onClick={this.handleClick}><i className="fas fa-times" aria-hidden="true"></i></button>
                     <h2>Recently Viewed</h2>
                     <ol className={'recentList'}>
@@ -48,7 +48,7 @@ class RecentlyViewed extends Component {
                         })}
                     </ol>
                 </aside>
-                <div className={'screenDark'}></div>
+                <div className={'screenDark screenDarkHidden'}></div>
             </React.Fragment>
         );
     }
