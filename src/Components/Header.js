@@ -12,7 +12,7 @@ class Header extends Component {
             <div className="wrapper">
                 <header className="flexContainer">
                     <h1>xkcd</h1>
-                    <p>comics by: <a className={'mainFocus'} onMouseLeave={this.handleHoverOff} href="https://twitter.com/xkcd?lang=en" target="_blank" rel="noopener noreferrer">Randall Patrick Munroe</a></p>
+                    <p>comics by: <a className={'mainFocus'} tabIndex='1' onMouseLeave={this.handleHoverOff} href="https://twitter.com/xkcd?lang=en" target="_blank" rel="noopener noreferrer">Randall Patrick Munroe</a></p>
                 </header>
             </div>
         );

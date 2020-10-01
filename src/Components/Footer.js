@@ -15,6 +15,7 @@ class Footer extends Component {
                         © 2020 
                         <a 
                         className={'mainFocus'}
+                        tabIndex='1'
                         onMouseLeave={this.handleHoverOff}
                         href="https://github.com/awsclemens" 
                         target="_blank" 
@@ -22,6 +23,7 @@ class Footer extends Component {
                         </a> || 
                         <a 
                         className={'mainFocus'}
+                        tabIndex='1'
                         onMouseLeave={this.handleHoverOff}
                         href="https://junocollege.com/" 
                         target="_blank" 
