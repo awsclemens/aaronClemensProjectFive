@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
+    // remove focus( and therefore hover effect) from links after clicking (it would normally persist)
     handleHoverOff = (e) => {
         e.target.blur();
     }

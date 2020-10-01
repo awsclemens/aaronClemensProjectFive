@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 
 class RecentlyViewed extends Component { 
 
+    // hide recently viewed list and screen dark on button click, remove its tab indexing and add back tab indexing to main focus
     handleClick = () => {
         const recentList = document.getElementsByClassName('recentlyViewed');
         const screenDark = document.getElementsByClassName('screenDark');
@@ -20,12 +21,14 @@ class RecentlyViewed extends Component {
         }
     }
 
+    // allows user to click on a recently viewed comic and then hide recently viewed list and screen dark, remove its tab indexing and add back tab indexing to main focus, AND display this comic to the main page
     selectComic = (comicNum) => {
         this.props.comicSelect(`${comicNum}/`);
         this.handleClick();
     }
 
     render(){
+        // reorder the recently viewed comics so that most recent is at the top of the list down to least recent at the bottom
         const newArray = [...this.props.recentList];
         const recentArray = [];
         for (let i = newArray.length - 1; i >= 0; i--){

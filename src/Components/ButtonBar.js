@@ -1,7 +1,9 @@
 // ButtonBar.js
 import React, { Component } from 'react';
 
+
 class ButtonBar extends Component {
+    // remove focus( and therefore hover effect) from button after clicking (it would normally persist)
     handleHoverOff = (e) => {
         e.target.blur();
     }

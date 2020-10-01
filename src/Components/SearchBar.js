@@ -10,12 +10,14 @@ class SearchBar extends Component {
         }
     }
 
+    // set the state with all changes to user input in the number input box
     handleChange = (e) => {
         this.setState({
             userInput: e.target.value,
         })
     }
 
+    // allows user to click on a "Recently Viewed" button and then remove main page tab indexing and add tab indexing to list focus, AND slide out the screen dark and recentlyViewed list on top of the main page.
     openList = () => {
         const recentList = document.getElementsByClassName('recentlyViewed');
         const screenDark = document.getElementsByClassName('screenDark');

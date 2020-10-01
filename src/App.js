@@ -47,6 +47,7 @@ class App extends Component {
     });
   }
 
+  // axios call to get xkcd comic, by specific comic number, or, if blank, the latest comic
   loadComic = (comicNum) => {
     axios({
       method: 'GET',
@@ -83,21 +84,25 @@ class App extends Component {
     });
   }
 
+  // search for a comic using comic number provided by user in number input
   numberSearch = (e, userInput) => {
     e.preventDefault();
     this.loadComic(`${userInput}/`);
     document.getElementById('comicNumSearch').reset();
   }
 
+  // generate random number from 1 to latest comic number and use that random number to search for that comic
   randomComic = () => {
     const comicNum = Math.floor(Math.random() * this.state.latestNum) + 1;
     this.loadComic(`${comicNum}/`);
   }
 
+  // using the current comic number, subtract 1 (if not the 1st comic) to search for that comic
   previousComic = () => {
     return(this.state.currentComicNum > 1 ? this.loadComic(`${this.state.currentComicNum - 1}/`) : this.loadComic('1/'));
   }
 
+  // using the current comic number, add 1 (if not the latest comic) to search for that comic
   nextComic = () => {
     return(this.state.currentComicNum < this.state.latestNum ? this.loadComic(`${this.state.currentComicNum + 1}/`) : this.loadComic(`${this.state.latestNum}/`));
   }
