@@ -29,21 +29,18 @@ class App extends Component {
     const dbRef = firebase.database().ref();
     // listen to the value change in realtime database
     dbRef.on('value', (response) => {
-      console.log('database:', response.val());
 
       const newState = [];
       const data = response.val();
 
       for(const key in data) {
-        console.log(key, data[key]);
-
         newState.push({
           key: key,
           recentComic: data[key]
         });
       }
 
-      // update state with recent Comics
+      // update state with recent Comics from firebase
       this.setState({
         recentComics: newState,
       });
@@ -83,15 +80,11 @@ class App extends Component {
         const dbRef = firebase.database().ref();
         dbRef.push(this.state.comic[0]);
       }
-      console.log('current comic', this.state.comic);
-      console.log('current comic #:',this.state.currentComicNum);
-      console.log('latest num: ',this.state.latestNum);
     });
   }
 
   numberSearch = (e, userInput) => {
     e.preventDefault();
-    console.log('submitted');
     this.loadComic(`${userInput}/`);
     document.getElementById('comicNumSearch').reset();
   }

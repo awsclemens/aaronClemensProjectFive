@@ -76,6 +76,61 @@ ol {
   overflow-x: hidden;
 }
 
+header,
+main,
+footer {
+  background: #77BA99;
+  color: #262730;
+  padding: 20px 10px;
+  border-radius: 5px;
+  border: 1px solid #D7C0D0;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
+}
+
+main {
+  background: #EFF0D1;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 7.5rem;
+}
+
+a {
+  color: #262730;
+}
+
+a:hover,
+a:focus {
+  color: #D33F49;
+}
+
+button {
+  font-size: 2.4rem;
+  background: #262730;
+  color: #EFF0D1;
+}
+
+button:focus,
+button:hover {
+  background: #D7C0D0;
+  color:  #262730;
+  cursor: pointer;
+}
+
+/***********************/
+/*<< recently viewed >>*/
+/***********************/
+
 .screenDark {
   position: absolute;
   top: 0;
@@ -160,57 +215,6 @@ ol button:focus {
 
 ol li span {
   font-size: 1.6rem;
-}
-
-header,
-main,
-footer {
-  background: #77BA99;
-  color: #262730;
-  padding: 20px 10px;
-  border-radius: 5px;
-  border: 1px solid #D7C0D0;
-}
-
-h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 5rem;
-}
-
-main {
-  background: #EFF0D1;
-  font-family: 'Roboto', sans-serif;
-}
-
-h2 {
-  font-size: 4rem;
-}
-
-h3 {
-  font-family: 'East Sea Dokdo', cursive;
-  font-size: 7.5rem;
-}
-
-a {
-  color: #262730;
-}
-
-a:hover,
-a:focus {
-  color: #D33F49;
-}
-
-button {
-  font-size: 2.4rem;
-  background: #262730;
-  color: #EFF0D1;
-}
-
-button:focus,
-button:hover {
-  background: #D7C0D0;
-  color:  #262730;
-  cursor: pointer;
 }
 
 /**************/
@@ -335,15 +339,20 @@ footer a:first-of-type {
   font-weight: bold;
 }
 
-/******************/
-/*<< key frames >>*/
-/******************/
-
 /*********************/
 /*<< media queries >>*/
 /*********************/
 @media(max-width: 940px) {
-  /*<< general >>*/
+  /*<< general styles >>*/
+  .wrapper {
+    width: 85%;
+  }
+
+  .App {
+    font-size: calc(1.8rem + (100vw - 320px)*((40 - 18)/(940 - 320)));
+  }
+
+  /*<< recently viewed styles >>*/
   .screenDark {
     width: 60%;
   }
@@ -360,18 +369,13 @@ footer a:first-of-type {
     font-size: calc(1.4rem + (100vw - 769px)*((16 - 14)/(940 - 768))); 
   }
 
-  .wrapper {
-    width: 85%;
-  }
-
-  .App {
-    font-size: calc(1.8rem + (100vw - 320px)*((40 - 18)/(940 - 320)));
-  }
+  /*<< header styles >>*/
 
   h1 {
     font-size: calc(4rem + (100vw - 320px)*((50 - 40)/(940 - 320)));
   }
 
+  /*<< main styles >>*/
   .searchBar button,
   .searchBar {
     font-size: calc(1.4rem + (100vw - 320px)*((24 - 16)/(940 - 320)));
@@ -396,7 +400,6 @@ footer a:first-of-type {
     font-size: calc(4.4rem + (100vw - 320px)*((75 - 44)/(940 - 320)));
   }
 
-  /*<< main >>*/
   .overlay {
     font-size: calc(1.4rem + (100vw - 320px)*((20 - 14)/(940 - 320)));
   }
@@ -404,11 +407,16 @@ footer a:first-of-type {
 }
 
 @media(max-width: 768px) {
-  /*<< general >>*/
+  /*<< general styles >>*/
+  .wrapper {
+    width: 90%;
+  }
+
   .App {
     text-shadow: 1px 1px #D7C0D0;
   }
-
+  
+  /*<< recently viewed styles >>*/
   .screenDark,
   .recentlyViewed {
     width: 50%;
@@ -425,14 +433,21 @@ footer a:first-of-type {
   ol li span {
     font-size: calc(1.2rem + (100vw - 481px)*((14 - 12)/(768 - 480))); 
   }
-
-  .wrapper {
-    width: 90%;
-  }
 }
 
 @media(max-width: 480px) {
-  /*<< general >>*/
+  /*<< general styles >>*/
+  .wrapper {
+    width: 95%;
+  }
+
+  header,
+  main,
+  footer {
+    padding: 5px;
+  }
+
+  /*<< recently viewed styles >>*/
   .screenDark {
     width: 25%;
   }
@@ -452,16 +467,6 @@ footer a:first-of-type {
 
   ol li span {
     font-size: 1.2rem;
-  }
-
-  .wrapper {
-    width: 95%;
-  }
-
-  header,
-  main,
-  footer {
-    padding: 5px;
   }
 
   /*<< main >>*/
